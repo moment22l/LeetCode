@@ -13,3 +13,10 @@ type Node struct {
 	Next  *Node
 	Child *Node
 }
+
+// TreeNode 二叉树
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
