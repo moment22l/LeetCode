@@ -41,7 +41,6 @@ func dfs(node *utils.TreeNode, target int, path []int) {
 }
 
 func main() {
-	tree := tree.BinaryTreeGenerator("C:\\Users\\82507\\AppData\\Roaming\\JetBrains" +
-		"\\IntelliJIdea2022.2\\scratches\\scratch_1.json")
+	tree := tree.BinaryTreeGenerator("F:\\GOProjects\\LeetCode\\utils\\tree\\tree.json")
 	fmt.Println(pathSum(tree, -243))
 }
