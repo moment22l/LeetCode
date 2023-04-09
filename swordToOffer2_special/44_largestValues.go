@@ -1,11 +1,13 @@
 package main
 
-func largestValues(root *TreeNode) (ans []int) {
+import "LeetCode/utils"
+
+func largestValues(root *utils.TreeNode) (ans []int) {
 	if root == nil {
 		ans = []int{}
 		return
 	}
-	queue := make([]*TreeNode, 1)
+	queue := make([]*utils.TreeNode, 1)
 	queue[0] = root
 	for len(queue) != 0 {
 		max := queue[0].Val

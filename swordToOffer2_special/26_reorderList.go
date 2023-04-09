@@ -1,6 +1,8 @@
 package main
 
-func reorderList(head *ListNode) {
+import "LeetCode/utils"
+
+func reorderList(head *utils.ListNode) {
 	// 重排链表
 	if head == nil {
 		return
@@ -17,7 +19,7 @@ func reorderList(head *ListNode) {
 	mergeList(p1, p2)
 }
 
-func findMiddleNode(head *ListNode) *ListNode {
+func findMiddleNode(head *utils.ListNode) *utils.ListNode {
 	// 找链表中点
 	p := head
 	length := 0
@@ -32,9 +34,9 @@ func findMiddleNode(head *ListNode) *ListNode {
 	return p
 }
 
-func copyReverseList(head *ListNode) *ListNode {
+func copyReverseList(head *utils.ListNode) *utils.ListNode {
 	// 三指针遍历(前中后指针)
-	var p1 *ListNode
+	var p1 *utils.ListNode
 	p2 := head
 	for p2 != nil {
 		next := p2.Next
@@ -45,7 +47,7 @@ func copyReverseList(head *ListNode) *ListNode {
 	return p1
 }
 
-func mergeList(p1 *ListNode, p2 *ListNode) {
+func mergeList(p1 *utils.ListNode, p2 *utils.ListNode) {
 	// 合并链表
 	temp := p2
 	for p1 != nil {

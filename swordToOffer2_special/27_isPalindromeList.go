@@ -1,5 +1,7 @@
 package main
 
+import "LeetCode/utils"
+
 //func isPalindromeList(head *ListNode) bool {
 //	// 用数组记录链表的值, 再判断数组是否为回文数组
 //	arr := make([]int, 0)
@@ -16,7 +18,7 @@ package main
 //	return true
 //}
 
-func isPalindromeList(head *ListNode) bool {
+func isPalindromeList(head *utils.ListNode) bool {
 	if head == nil || head.Next == nil {
 		return true
 	}
@@ -41,7 +43,7 @@ func isPalindromeList(head *ListNode) bool {
 	return result
 }
 
-func findMiddleNode2(head *ListNode) *ListNode {
+func findMiddleNode2(head *utils.ListNode) *utils.ListNode {
 	// 找链表中点(快慢指针版)
 	slow, fast := head, head
 	for fast.Next != nil && fast.Next.Next != nil {
@@ -51,9 +53,9 @@ func findMiddleNode2(head *ListNode) *ListNode {
 	return slow
 }
 
-func copyReverseList2(head *ListNode) *ListNode {
+func copyReverseList2(head *utils.ListNode) *utils.ListNode {
 	// 三指针遍历(前中后指针)
-	var p1 *ListNode
+	var p1 *utils.ListNode
 	p2 := head
 	for p2 != nil {
 		next := p2.Next

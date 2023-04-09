@@ -1,8 +1,10 @@
 package main
 
-func insert(aNode *ListNode, x int) *ListNode {
+import "LeetCode/utils"
+
+func insert(aNode *utils.ListNode, x int) *utils.ListNode {
 	if aNode == nil {
-		aNode = &ListNode{x, nil}
+		aNode = &utils.ListNode{x, nil}
 		aNode.Next = aNode
 		return aNode
 	}
@@ -10,11 +12,11 @@ func insert(aNode *ListNode, x int) *ListNode {
 	front = front.Next
 	for front != back {
 		if front.Val >= x && x >= back.Val {
-			back.Next = &ListNode{x, front}
+			back.Next = &utils.ListNode{x, front}
 			return aNode
 		}
 		if back.Val > front.Val && (front.Val >= x || back.Val <= x) {
-			back.Next = &ListNode{x, front}
+			back.Next = &utils.ListNode{x, front}
 			return aNode
 		}
 		if front != aNode {
@@ -22,6 +24,6 @@ func insert(aNode *ListNode, x int) *ListNode {
 		}
 		back = back.Next
 	}
-	aNode.Next = &ListNode{x, aNode.Next}
+	aNode.Next = &utils.ListNode{x, aNode.Next}
 	return aNode
 }

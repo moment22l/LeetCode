@@ -1,4 +1,4 @@
-package main
+package utils
 
 // ListNode 链表节点 使用到的题目: 21-27
 type ListNode struct {

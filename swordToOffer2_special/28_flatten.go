@@ -1,9 +1,11 @@
 package main
 
+import "LeetCode/utils"
+
 // flatten 展平多级双向链表
-func flatten(root *Node) *Node {
+func flatten(root *utils.Node) *utils.Node {
 	// 利用栈存储 每级中指向子链表节点的后一个节点, 时间O(n), 空间O(n)(ps: 空间的最坏情况为所有都有Child而没有next)
-	stack := make([]*Node, 0)
+	stack := make([]*utils.Node, 0)
 	p := root
 	for p != nil {
 		if p.Child != nil {

@@ -1,7 +1,8 @@
 package main
 
 import (
-	"LeetCode/swordToOffer/utils/tree"
+	"LeetCode/utils"
+	"LeetCode/utils/tree"
 	"fmt"
 )
 
@@ -14,7 +15,7 @@ type TreeNode struct {
 
 var pathCol [][]int
 
-func pathSum(root *tree.TreeNode, target int) [][]int {
+func pathSum(root *utils.TreeNode, target int) [][]int {
 	if root == nil {
 		return nil
 	}
@@ -23,7 +24,7 @@ func pathSum(root *tree.TreeNode, target int) [][]int {
 	return pathCol
 }
 
-func dfs(node *tree.TreeNode, target int, path []int) {
+func dfs(node *utils.TreeNode, target int, path []int) {
 	if node.Val == target && node.Left == nil && node.Right == nil {
 		path = append(path, node.Val)
 		temp := make([]int, len(path))

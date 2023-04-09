@@ -1,7 +1,9 @@
 package main
 
-func findBottomLeftValue(root *TreeNode) (ans int) {
-	queue := make([]*TreeNode, 1)
+import "LeetCode/utils"
+
+func findBottomLeftValue(root *utils.TreeNode) (ans int) {
+	queue := make([]*utils.TreeNode, 1)
 	queue[0] = root
 	for len(queue) != 0 {
 		node := queue[0]

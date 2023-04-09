@@ -1,5 +1,7 @@
 package main
 
+import "LeetCode/utils"
+
 // 删除链表的倒数第 n 个结点
 
 //func removeNthFromEnd(head *ListNode, n int) *ListNode {
@@ -23,7 +25,7 @@ package main
 //	return head
 //}
 
-func removeNthFromEnd(head *ListNode, n int) *ListNode {
+func removeNthFromEnd(head *utils.ListNode, n int) *utils.ListNode {
 	// 前后指针
 	slow, quick := head, head
 	for i := 0; i < n; i++ {

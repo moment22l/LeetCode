@@ -1,8 +1,10 @@
 package main
 
+import "LeetCode/utils"
+
 // 链表中环的入口节点
 
-func detectCycle(head *ListNode) *ListNode {
+func detectCycle(head *utils.ListNode) *utils.ListNode {
 	// 快慢指针
 	slow, quick := head, head
 	for quick != nil {

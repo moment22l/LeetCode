@@ -1,8 +1,10 @@
 package main
 
-func reverseList(head *ListNode) *ListNode {
+import "LeetCode/utils"
+
+func reverseList(head *utils.ListNode) *utils.ListNode {
 	// 三指针遍历(前中后指针)
-	var p1 *ListNode
+	var p1 *utils.ListNode
 	p2 := head
 	for p2 != nil {
 		next := p2.Next
