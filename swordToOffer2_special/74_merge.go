@@ -4,6 +4,7 @@ import (
 	"sort"
 )
 
+// 先把二维数组用快排排序再依次遍历看是否能合并 时间O(nlogn+n)=O(nlogn) 空间O(logn)
 func merge(intervals [][]int) [][]int {
 	sort.Slice(intervals, func(i, j int) bool {
 		return intervals[i][0] < intervals[j][0]
