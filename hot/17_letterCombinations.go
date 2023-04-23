@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // 通过回溯遍历所有可能情况
 var letterMap map[string]string = map[string]string{
 	"2": "abc",
@@ -14,20 +12,20 @@ var letterMap map[string]string = map[string]string{
 	"9": "wxyz",
 }
 
-var combinations []string
+var combinations17 []string
 
 func letterCombinations(digits string) []string {
 	if len(digits) == 0 {
 		return []string{}
 	}
-	combinations = []string{}
+	combinations17 = []string{}
 	backtrack(digits, 0, "")
-	return combinations
+	return combinations17
 }
 
 func backtrack(digits string, index int, combination string) {
 	if index == len(digits) {
-		combinations = append(combinations, combination)
+		combinations17 = append(combinations17, combination)
 	} else {
 		digit := string(digits[index])
 		letters := letterMap[digit]
@@ -35,15 +33,4 @@ func backtrack(digits string, index int, combination string) {
 			backtrack(digits, index+1, combination+string(letters[i]))
 		}
 	}
-}
-
-func main() {
-	digits := "23"
-	fmt.Println(letterCombinations(digits))
-	digits = ""
-	fmt.Println(letterCombinations(digits))
-	digits = "2"
-	fmt.Println(letterCombinations(digits))
-	digits = "23456789"
-	fmt.Println(letterCombinations(digits))
 }

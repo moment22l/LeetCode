@@ -38,8 +38,3 @@ package main
 //	}
 //	return true
 //}
-//
-//func main() {
-//	fmt.Println(generateParenthesis(3))
-//	fmt.Println(generateParenthesis(1))
-//}

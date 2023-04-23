@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // 按周期划分字符串，逐行遍历行中每个周期中的字符，依次加入到字符串中
 func convert(s string, numRows int) string {
 	n := len(s)
@@ -20,14 +18,6 @@ func convert(s string, numRows int) string {
 		}
 	}
 	return string(outputS)
-}
-
-func main() {
-	fmt.Println(convert("PAYPALISHIRING", 3))
-	fmt.Println(convert("PAYPALISHIRING", 4))
-	fmt.Println(convert("PAYPALISHIRING", 30))
-	fmt.Println(convert("PAYPALISHIRING", 1))
-	fmt.Println(convert("A", 1))
 }
 
 /*

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"sort"
 )
 
@@ -53,17 +52,4 @@ func searchRange2(nums []int, target int) []int {
 	}
 	rightmost := sort.SearchInts(nums, target+1) - 1
 	return []int{leftmost, rightmost}
-}
-
-func main() {
-	nums := []int{5, 7, 7, 8, 8, 10}
-	fmt.Println(nums, 8, ": ", searchRange(nums, 8))
-	fmt.Println(nums, 6, ": ", searchRange(nums, 6))
-	nums = []int{1}
-	fmt.Println(nums, 1, ": ", searchRange(nums, 1))
-	fmt.Println(nums, 0, ": ", searchRange(nums, 0))
-	nums = []int{}
-	fmt.Println(nums, 0, ": ", searchRange(nums, 0))
-	nums = []int{2, 2}
-	fmt.Println(nums, 2, ": ", searchRange(nums, 2))
 }

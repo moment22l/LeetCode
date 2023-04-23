@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // 设置一个二维字符数组，用以记录每行字符
 // 设置flag记录遍历过程中行+还是行-,碰到第一行或最后一行时反向
 // 遍历完字符串后，再将二维数组中的所有一维数组转变为字符串并依次拼接，即得答案
@@ -28,12 +26,4 @@ func convert2(s string, numRows int) string {
 		outputS = outputS + string(rowBytes[i])
 	}
 	return outputS
-}
-
-func main() {
-	fmt.Println(convert2("PAYPALISHIRING", 3))
-	fmt.Println(convert2("PAYPALISHIRING", 4))
-	fmt.Println(convert2("PAYPALISHIRING", 30))
-	fmt.Println(convert2("PAYPALISHIRING", 1))
-	fmt.Println(convert2("A", 1))
 }

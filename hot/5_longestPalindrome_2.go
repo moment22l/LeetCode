@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // 中心扩展算法
 func longestPalindrome(s string) string {
 	if s == "" {
@@ -30,14 +28,4 @@ func expandAroundCenter(s string, left int, right int) (int, int) {
 	for ; left >= 0 && right < len(s) && s[left] == s[right]; left, right = left-1, right+1 {
 	}
 	return left + 1, right - 1
-}
-
-func main() {
-	fmt.Println(longestPalindrome("babad"))
-	fmt.Println(longestPalindrome("cbbd"))
-	fmt.Println(longestPalindrome(""))
-	fmt.Println(longestPalindrome("abcdef"))
-	fmt.Println(longestPalindrome("bbbbbb"))
-	fmt.Println(longestPalindrome("cbbcbbcbbcbbc"))
-	fmt.Println(longestPalindrome("abababababab"))
 }

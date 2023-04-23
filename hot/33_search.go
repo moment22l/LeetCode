@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // 二分查找
 func search(nums []int, target int) int {
 	var middle int
@@ -30,15 +28,4 @@ func search(nums []int, target int) int {
 		}
 	}
 	return -1
-}
-
-func main() {
-	nums := []int{4, 5, 6, 7, 0, 1, 2}
-	fmt.Println(search(nums, 0))
-	fmt.Println(search(nums, 3))
-	nums = []int{}
-	fmt.Println(search(nums, 0))
-	nums = []int{1}
-	fmt.Println(search(nums, 1))
-	fmt.Println(search(nums, 0))
 }

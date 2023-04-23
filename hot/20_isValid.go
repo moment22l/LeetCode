@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func isValid(s string) bool {
 	if len(s) <= 1 {
 		return false
@@ -32,25 +30,4 @@ func isValid(s string) bool {
 		return false
 	}
 	return true
-}
-
-func main() {
-	s := "()"
-	fmt.Println(isValid(s))
-	s = "(){}[]"
-	fmt.Println(isValid(s))
-	s = "(]"
-	fmt.Println(isValid(s))
-	s = "({[]})"
-	fmt.Println(isValid(s))
-	s = "({}[]{[]})"
-	fmt.Println(isValid(s))
-	s = "{()[]{})"
-	fmt.Println(isValid(s))
-	s = "{"
-	fmt.Println(isValid(s))
-	s = "(("
-	fmt.Println(isValid(s))
-	s = "}("
-	fmt.Println(isValid(s))
 }

@@ -41,17 +41,3 @@ package main
 //	}
 //}
 //
-//func main() {
-//	head := &ListNode{1, &ListNode{2, &ListNode{3, &ListNode{4, &ListNode{5, nil}}}}}
-//	head = removeNthFromEnd(head, 2)
-//	fmt.Println("1:")
-//	ShowNode(head)
-//	head = &ListNode{1, &ListNode{2, nil}}
-//	head = removeNthFromEnd(head, 1)
-//	fmt.Println("2:")
-//	ShowNode(head)
-//	head = &ListNode{1, nil}
-//	head = removeNthFromEnd(head, 1)
-//	fmt.Println("3:")
-//	ShowNode(head)
-//}

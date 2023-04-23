@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 经典超时
 //func maxArea(height []int) int {
 //	if len(height) <= 1 {
@@ -44,17 +40,4 @@ func maxArea(height []int) int {
 		}
 	}
 	return ans
-}
-
-func main() {
-	height := []int{1, 8, 6, 2, 5, 4, 8, 3, 7}
-	fmt.Println(maxArea(height))
-	height = []int{1, 1}
-	fmt.Println(maxArea(height))
-	height = []int{4, 3, 2, 1, 4}
-	fmt.Println(maxArea(height))
-	height = []int{1, 2, 4, 3}
-	fmt.Println(maxArea(height))
-	height = []int{1, 3, 2, 5, 25, 24, 5}
-	fmt.Println(maxArea(height))
 }

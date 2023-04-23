@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // 超时
 //func longestPalindrome(s string) string {
 //	maxString := ""
@@ -98,14 +96,4 @@ func longestPalindrome1(s string) string {
 		}
 	}
 	return string(runes[begin : begin+maxLen])
-}
-
-func main() {
-	fmt.Println(longestPalindrome1("babad"))
-	fmt.Println(longestPalindrome1("cbbd"))
-	fmt.Println(longestPalindrome1(""))
-	fmt.Println(longestPalindrome1("abcdef"))
-	fmt.Println(longestPalindrome1("bbbbbb"))
-	fmt.Println(longestPalindrome1("cbbcbbcbbcbbc"))
-	fmt.Println(longestPalindrome1("abababababab"))
 }

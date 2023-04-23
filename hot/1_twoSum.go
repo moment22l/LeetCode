@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 //func twoSum(nums []int, target int) []int {
 //  // 最简单的双循环，时间复杂度为O(n^2)
 //	var answer []int
@@ -34,11 +32,4 @@ func twoSum(nums []int, target int) []int {
 		numsMap[nums[i]] = i
 	}
 	return nil
-}
-
-func main() {
-	nums := []int{3, 2, 4}
-	target := 6
-	answer := twoSum(nums, target)
-	fmt.Println(answer)
 }
