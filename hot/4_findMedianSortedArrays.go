@@ -1,42 +1,47 @@
 package main
 
-// 1. 将两个数组按正序合并为一个nums, 然后直接找中位数
-//func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
-//	// 结果正确，但超时,且占用内存较多
-//	var median float64
-//	var nums []int
-//	i := 0
-//	j := 0
-//	for {
-//		if i != len(nums1) && j != len(nums2) {
-//			if nums1[i] <= nums2[j] {
-//				nums = append(nums, nums1[i])
-//				i++
-//			} else {
-//				nums = append(nums, nums2[j])
-//				j++
-//			}
-//		} else if i == len(nums1) && j != len(nums2) {
-//			nums = append(nums, nums2[j])
-//			j++
-//		} else if i != len(nums1) && j == len(nums2) {
-//			nums = append(nums, nums1[i])
-//			i++
-//		} else {
-//			break
-//		}
-//	}
-//	if len(nums)%2 == 0 {
-//		median = (float64(nums[len(nums)/2-1]) + float64(nums[(len(nums)/2)])) / 2
-//	} else {
-//		median = float64(nums[len(nums)/2])
-//	}
-//	return median
-//}
-
-// 2. 比较 i+j 和 (len(nums1)+len(nums2))/2, 分情况判断哪个为中位数
-
-// 3. 官方题解
+// 官方题解, 思路明白了, 但自己写得太难看了
+// O(log(m+n)), 空间O(1)
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
-	return 0
+	totalLength := len(nums1) + len(nums2)
+	if totalLength%2 == 1 {
+		midIndex := totalLength/2 + 1
+		return float64(getKthElement(nums1, nums2, midIndex))
+	} else {
+		midIndex1, midIndex2 := totalLength/2, totalLength/2+1
+		return float64(getKthElement(nums1, nums2, midIndex1)+getKthElement(nums1, nums2, midIndex2)) / 2.0
+	}
+}
+
+func getKthElement(nums1, nums2 []int, k int) int {
+	index1, index2 := 0, 0
+	for {
+		if index1 == len(nums1) {
+			return nums2[index2+k-1]
+		}
+		if index2 == len(nums2) {
+			return nums1[index1+k-1]
+		}
+		if k == 1 {
+			return min(nums1[index1], nums2[index2])
+		}
+		half := k / 2
+		newIndex1 := min(index1+half, len(nums1)) - 1
+		newIndex2 := min(index2+half, len(nums2)) - 1
+		pivot1, pivot2 := nums1[newIndex1], nums2[newIndex2]
+		if pivot1 <= pivot2 {
+			k -= newIndex1 - index1 + 1
+			index1 = newIndex1 + 1
+		} else {
+			k -= newIndex2 - index2 + 1
+			index2 = newIndex2 + 1
+		}
+	}
+}
+
+func min(x, y int) int {
+	if x < y {
+		return x
+	}
+	return y
 }
